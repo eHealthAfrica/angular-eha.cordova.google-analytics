@@ -1,5 +1,5 @@
 'use strict';
 
 angular.module('app', [
-  'eha.online-badge'
+  'eha.cordova.google-analytics'
 ]);
