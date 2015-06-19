@@ -1,0 +1,6 @@
+env:
+  jasmine: true
+globals:
+  angular: false
+  inject: false
+  module: false

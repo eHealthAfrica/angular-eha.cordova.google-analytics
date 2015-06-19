@@ -1,0 +1,30 @@
+{
+  "name": "angular-eha.cordova.google-analytics",
+  "description": "Cordova-backed Google Analytics services",
+  "authors": [
+    "Tom Vincent <git@tlvince.com>"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "homepage": "https://tlvince.com",
+  "keywords": [
+    "cordova",
+    "google-analytics",
+    "exceptions"
+  ],
+  "main": "cordova.google-analytics.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eHealthAfrica/angular-eha.cordova.google-analytics.git"
+  },
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
