@@ -8,7 +8,7 @@ error() { info "$1"; exit 1; }
 [[ "$TRAVIS_TAG" ]] || error "Only deploying tagged builds"
 [[ "$TRAVIS_PULL_REQUEST" == "false" ]] || error "Not deploying pull requests"
 
-git clone https://github.com/eHealthAfrica/angular-eha.cordova-google-analytics-bower.git deploy
+git clone https://github.com/eHealthAfrica/angular-eha.cordova.google-analytics-bower.git deploy
 mv bower.json README.md LICENSE dist/* deploy
 cd deploy
 git add .
