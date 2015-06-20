@@ -7,9 +7,20 @@
 Provides Angular services and directives to interact with the Cordova
 [google-analytics-plugin][].
 
+Features:
+
+* Click tracking (via the `ehaGaClick` directive)
+* Track arbitrary events (via the `ehaGoogleAnalytics` service)
+* Google Analytics [user ID][] support
+* Offline-first
+
+Optional integration with [ui-router][] for zero-config page view tracking and
+state change error reporting.
+
 [travis-image]: https://img.shields.io/travis/eHealthAfrica/angular-eha.cordova.google-analytics.svg
 [travis-url]: https://travis-ci.org/eHealthAfrica/angular-eha.cordova.google-analytics
 [google-analytics-plugin]: https://github.com/danwilson/google-analytics-plugin
+[user id]: https://support.google.com/analytics/answer/3123663
 
 ## Installation
 
@@ -44,6 +55,34 @@ Or alternatively, with Bower:
     ```
 
 [installed]: https://github.com/danwilson/google-analytics-plugin#installing
+
+## Services
+
+### `ehaGoogleAnalytics`
+
+Exposes the `trackEvent` and `setUserId` methods from google-analytics-plugin's
+[JS API][]:
+
+* `ehaGoogleAnalytics.trackEvent('Category', 'Action', ['Label', ['Value']])`
+* `ehaGoogleAnalytics.setUserId('my-user-id')`
+
+… and adds the following event listeners:
+
+#### `$stateChangeSuccess`
+
+(Assumes [ui-router][] is in use).
+
+Tracks the current screen (page view) using `state.name`.
+
+#### `$stateNotFound`
+
+(Assumes [ui-router][] is in use).
+
+Tracks a `stateNotFound` event, with the action `unfoundState.to` and label
+`fromState`.
+
+[js api]: https://github.com/danwilson/google-analytics-plugin#javascript-usage
+[ui-router]: http://angular-ui.github.io/ui-router/site
 
 ## Directives
 
