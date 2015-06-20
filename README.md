@@ -45,6 +45,20 @@ Or alternatively, with Bower:
 
 [installed]: https://github.com/danwilson/google-analytics-plugin#installing
 
+## Directives
+
+### `ehaGaClick`
+
+Add the `ehaGaClick` attribute to an element to track click events.
+
+```html
+<a eha-ga-click="label">Action</a>
+```
+
+Events are reported under `Click` category, with the element's text used as the
+action. Optionally, pass a value to the directive to report as the event's
+label.
+
 ## License
 
 Copyright 2015 Tom Vincent <git@tlvince.com>
