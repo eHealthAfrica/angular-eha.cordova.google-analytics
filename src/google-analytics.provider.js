@@ -12,11 +12,9 @@
   function ehaGoogleAnalytics() {
     var self = this;
 
-    this.uuid = '';
     this.trackingID = '';
-
     this.$get = function($log, $window, $rootScope) {
-      function GoogleAnalytics(trackingID, uuid) {
+      function GoogleAnalytics(trackingID) {
         function registerListeners() {
           function trackView(event, state) {
             $window.analytics.trackView(state.name);
@@ -31,16 +29,17 @@
         }
 
         this.trackEvent = angular.noop;
+        this.setUserId = angular.noop;
 
         if ($window.analytics) {
           $window.analytics.startTrackerWithId(trackingID);
-          $window.analytics.setUserId(uuid);
           registerListeners();
           this.trackEvent = $window.analytics.trackEvent;
+          this.setUserId = $window.analytics.setUserId;
         }
       }
 
-      return new GoogleAnalytics(self.trackingID, self.uuid);
+      return new GoogleAnalytics(self.trackingID);
     };
   }
 

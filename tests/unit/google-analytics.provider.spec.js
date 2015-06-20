@@ -3,25 +3,21 @@
 describe('eha.cordova.google-analytics', function() {
   it('should be configurable', function() {
     var $window;
-    var uuid = 'super';
     var trackingID = 'dooper';
 
     module(function($provide) {
       $window = {
         analytics: {
-          startTrackerWithId: angular.noop,
-          setUserId: angular.noop
+          startTrackerWithId: angular.noop
         }
       };
 
       spyOn($window.analytics, 'startTrackerWithId');
-      spyOn($window.analytics, 'setUserId');
 
       $provide.value('$window', $window);
     });
 
     module('eha.cordova.google-analytics', function(ehaGoogleAnalyticsProvider) {
-      ehaGoogleAnalyticsProvider.uuid = uuid;
       ehaGoogleAnalyticsProvider.trackingID = trackingID;
     });
 
@@ -30,9 +26,6 @@ describe('eha.cordova.google-analytics', function() {
 
       expect($window.analytics.startTrackerWithId)
         .toHaveBeenCalledWith(trackingID);
-
-      expect($window.analytics.setUserId)
-        .toHaveBeenCalledWith(uuid);
     });
   });
 });
