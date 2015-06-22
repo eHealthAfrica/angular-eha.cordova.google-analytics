@@ -11,6 +11,7 @@ Features:
 
 * Click tracking (via the `ehaGaClick` directive)
 * Track arbitrary events (via the `ehaGoogleAnalytics` service)
+* Exception reporting (via the `ehaGaDecorator` decorator)
 * Google Analytics [user ID][] support
 * Offline-first
 
@@ -97,6 +98,20 @@ Add the `ehaGaClick` attribute to an element to track click events.
 Events are reported under `Click` category, with the element's text used as the
 action. Optionally, pass a value to the directive to report as the event's
 label.
+
+## Decorators
+
+### `ehaGaDecorator`
+
+This decorates Angular's [$exceptionHandler][] service, reporting `Exception`
+events, with the exception's message as the action and the stack trace as the event's label.
+
+**Note**, we use a standard Google Analytic's event (with the `Exception`
+category) rather than the [exceptions][] method as the latter is limited to a
+100 character string.
+
+[$exceptionHandler]: https://docs.angularjs.org/api/ng/service/$exceptionHandler
+[exceptions]: https://developers.google.com/analytics/devguides/collection/android/v4/exceptions
 
 ## License
 
