@@ -109,7 +109,7 @@ label.
 This decorates Angular's [$exceptionHandler][] service, reporting `Exception`
 events, with the exception's message as the action and the stack trace as the event's label.
 
-**Note**, we use a standard Google Analytic's event (with the `Exception`
+**Note**, we use a standard Google Analytics event (with the `Exception`
 category) rather than the [exceptions][] method as the latter is limited to a
 100 character string.
 
