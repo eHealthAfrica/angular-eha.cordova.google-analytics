@@ -53,7 +53,7 @@ Or alternatively, with Bower:
 
     ```js
     angular.module('app')
-      .config('ehaGoogleAnalyticsProvider', function() {
+      .config(function(ehaGoogleAnalyticsProvider) {
         ehaGoogleAnalyticsProvider.trackingID = 'UA-000000-01';
       });
     ```
