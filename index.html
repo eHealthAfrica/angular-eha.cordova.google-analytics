@@ -6,8 +6,17 @@
     <title>angular-eha.cordova.google-analytics demo</title>
   </head>
   <body>
+    <h1>angular-eha.cordova.google-analytics</h1>
+    <p>Follow along in your browser's development tools window.</p>
     <div ng-controller="ctrl">
-      <button ng-click="click()">Click</button>
+      <h2><code>ehaGoogleAnalytics.trackEvent</code></h2>
+      <p>Demonstrates arbitrary event tracking. Click the button to report an event:</p>
+      <button ng-click="trackEvent()">Event</button>
+      <p>In the console, you should see the method signature logged.</p>
+      <h2><code>ehaGaDecorator</code></h2>
+      <p>Demonstrates exception reporting. Click the button to throw an exception:</p>
+      <button ng-click="trackException()">Exception</button>
+      <p>You should see Angular's built-in exception handler log to the console, plus another log with the 'event:' prefix. The subsequent strings are reported to Google Analytics following the 'event' signature (as above).</p>
     </div>
     <script src="//cdn.jsdelivr.net/angularjs/1.4.0/angular.min.js"></script>
     <script src="//cdn.rawgit.com/eHealthAfrica/angular-eha.cordova.google-analytics-bower/master/cordova.google-analytics.js"></script>
