@@ -9,9 +9,9 @@ Provides Angular services and directives to interact with the Cordova
 
 Features:
 
-* Click tracking (via the `ehaGaClick` directive)
-* Track arbitrary events (via the `ehaGoogleAnalytics` service)
-* Exception reporting (via the `ehaGaDecorator` decorator)
+* Click tracking (via the [ehaGaClick][] directive)
+* Track arbitrary events (via the [ehaGoogleAnalytics][] service)
+* Exception reporting (via the [ehaGaDecorator][] decorator)
 * Google Analytics [user ID][] support
 * Offline-first
 
@@ -22,6 +22,9 @@ state change error reporting.
 [travis-url]: https://travis-ci.org/eHealthAfrica/angular-eha.cordova.google-analytics
 [google-analytics-plugin]: https://github.com/danwilson/google-analytics-plugin
 [user id]: https://support.google.com/analytics/answer/3123663
+[ehaGaClick]: #ehagaclick
+[ehaGoogleAnalytics]: #ehagoogleanalytics
+[ehaGaDecorator]: #ehagadecorator
 
 ## Installation
 
