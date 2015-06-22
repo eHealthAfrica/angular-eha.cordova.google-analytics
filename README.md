@@ -13,7 +13,7 @@ Features:
 * Track arbitrary events (via the [ehaGoogleAnalytics][] service)
 * Exception reporting (via the [ehaGaDecorator][] decorator)
 * Google Analytics [user ID][] support
-* Offline-first
+* Offline support
 
 Optional integration with [ui-router][] for zero-config page view tracking and
 state change error reporting.
