@@ -1,25 +1,17 @@
 sudo: false
 language: node_js
-node_js:
-- '0.10'
 cache:
   directories:
-  - node_modules
+    - node_modules
 notifications:
   email: false
+node_js:
+  - '0.10'
+before_install:
+  - npm i -g npm@^2.0.0
+before_script:
+  - npm prune
 after_script:
-- "./scripts/bower-deploy.sh"
-before_deploy:
-- npm config set spin false --global
-env:
-  global:
-  - secure: D3ZwaLJrCEH5DsvK6XabAVd3XIgSdFr2A6rf8M3DNiA8Ua675nxhZFSLkAivrGkjb/lQaq8RPnrjyH6E7hzenI7lrZEM1d8qFDHdF8lgcnFtOjV7uyg+RpJ1SGqFCzisB1XTrsBYWrXGwtPNSSr98wWTeP4KCw0xT11msQ17KAQNUPYSYjFld8qnKO3xZtuh6IfJXInrodhqeU1CertPOrBxzDOKecOqKvvr/mxKQxkVmZqsEMaMN/L8DCW5hjJDCF0+t+oCEEELWt+lReB0nEA3QywpOpcH0j7V0uHk2ua7nySR5ssKkRnmbdPSLCyFcAMSD1Sl+zJvNk3e/bErIDcyFnl5ljfabgMF3+TODzju00QAb5hgwEGv7TqTLaYT9LVuNNY5AHY90lDFtrvGDhwsKYq7gLvoPQYrsXrUXkCXRNvu2Dq9gW9wZmuT5C71WUP6xICgKdA5fZ8pVn9N/MK6ZaDuDwShGB3Taf60uozdV0rMan5wA5x8HQ4pAph7qE/nVvrnX6yocT91eWJ/5mhCVZp6BHKkJhEFCgym1spBuFt/tXZQ/Nskq1cD0vLbtGMYaKmUPm0XMMmFeS9+g5GQDTQqeB/cLFjxrCTl2350rM3JQl21iFVKOu39KTyhpkcxVkQa+HS25m2O/Kon0NRpL9IyNqwzBh3omwxJ/To=
-deploy:
-  provider: npm
-  email: oss@ehealthafrica.org
-  skip_cleanup: true
-  on:
-    branch: master
-    repo: eHealthAfrica/angular-eha.cordova.google-analytics
-  api_key:
-    secure: mlteXgFK04NIdSXLXu4HwM+mssryRV9Xiwu2kKrUhYvzeJbb9o9XodApOvgXGTxe6TV5dVM2zYLhQNNFiQCDIJtnG+C+JCPdEbAGHZWwqObXLcZjDNGSNx6kvPj4+6z57TD9rjHKOsg38efElXHVcO7F9OQ+V8IswWBfzhP7O/iytfMjEZRB3jHHLM/1h1XsU4BIiaST+55pg9IvJU3I85tNU+J2eFG286J6fapGXYmBzD7H5jiplnoAfNT6Dc/a4MMstsHJkMurdbTKy+IOkK8fPximViFdi5a61iUWur788kVJ+VZuUeQa70sEtMPjgGk01LYYKAhHU/RvHr8jKOAakpP1AFmXULkaC03G/jV5vWYQTkQDyKQRGDKGhok4nxborhWuVqWf6RrXSJNrujBBiL1EsrBobQHg6ZfFTqTEtZ/C/kffcRuS4RD71/HbdCRTevQASPlyWhRBy46P5lKk+iQVIp6nHt4TCpDhbxA2VII2cvQ2HgCbd/iOacCZgMUK5ltomjkRT4kwFrKFtoRkfseH0DAONleMrsKToJWt25JgT7i7XPebuEs9E3XRy8wqwKDedFcaEQVrxAv6xKDuw1H51OoUAVfQwK5OrXgPPPMEg1Dsd54rPMS8jHiYGBYsdtIpxY/tO3LkGlYawwpBSNl6Kn7HyZccH4qsNjA=
+  - './scripts/bower-deploy.sh'
+after_success:
+  - npm run semantic-release

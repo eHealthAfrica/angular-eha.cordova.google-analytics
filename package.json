@@ -1,13 +1,12 @@
 {
   "name": "angular-eha.cordova.google-analytics",
-  "version": "0.0.0-semantically-released",
   "description": "Cordova-backed Google Analytics services",
   "main": "dist/cordova.google-analytics.js",
   "scripts": {
     "pretest": "eslint *.js src/*.js tests/**/*.js",
     "test": "grunt test",
-    "prepublish": "grunt build && semantic-release pre",
-    "postpublish": "semantic-release post"
+    "presemantic-release": "grunt build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -43,6 +42,6 @@
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "load-grunt-tasks": "^3.1.0",
-    "semantic-release": "^3.3.1"
+    "semantic-release": "^4.0.3"
   }
 }
