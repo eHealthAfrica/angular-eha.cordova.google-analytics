@@ -1,3 +1,5 @@
 extends: tlvince
 env:
   node: true
+rules:
+  space-in-brackets: 0
