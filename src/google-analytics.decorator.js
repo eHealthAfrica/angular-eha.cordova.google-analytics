@@ -17,6 +17,9 @@
 
       return function(exception, cause) {
         $delegate(exception, cause);
+        if (!(exception.message && exception.stack)) {
+          return;
+        }
         ehaGoogleAnalytics = ehaGoogleAnalytics ||
           $injector.get('ehaGoogleAnalytics');
         ehaGoogleAnalytics.trackEvent(
