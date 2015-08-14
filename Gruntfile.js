@@ -6,8 +6,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
-      dist: ['dist/'],
-      tmp: ['.tmp/']
+      dist: [
+        'dist/'
+      ],
+      tmp: [
+        '.tmp/'
+      ]
     },
     copy: {
       scripts: {
@@ -48,16 +52,22 @@ module.exports = function(grunt) {
         singleQuotes: true
       },
       tmp: {
-        files: [{
-          expand: true,
-          src: ['.tmp/**/*.js']
-        }]
+        files: [
+          {
+            expand: true,
+            src: [
+              '.tmp/**/*.js'
+            ]
+          }
+        ]
       }
     },
     uglify: {
       dist: {
         files: {
-          'dist/cordova.google-analytics.min.js': ['.tmp/scripts.js']
+          'dist/cordova.google-analytics.min.js': [
+            '.tmp/scripts.js'
+          ]
         }
       }
     },
@@ -104,5 +114,7 @@ module.exports = function(grunt) {
     ]);
   });
 
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', [
+    'build'
+  ]);
 };
